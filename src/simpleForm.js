@@ -37,4 +37,4 @@ class SimpleForm extends Component {
     }
   }
   
-  export default withScript(SimpleForm)
+  export default withScript(SimpleForm);
