@@ -1,24 +1,19 @@
-const { REACT_APP_API_KEY } = process.env;
-
-
-const injectScript = () => {
+const injectScript = (url) => {
   return new Promise(function (resolve, reject) {
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {
-        return;
-      }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = `https://maps.googleapis.com/maps/api/js?key=${REACT_APP_API_KEY}&libraries=places`;
-      fjs.parentNode.insertBefore(js, fjs);
-      js.onload = function () {
-        resolve(window.google);
-      }
-      js.onerror = function (error) {
-        reject(error);
-      }
-    })(document, 'script', 'google-maps');
+    var js, fjs = document.getElementsByTagName(s)[0];
+    if (document.getElementById(id)) {
+      return;
+    }
+    js = document.createElement('script');
+    js.id = id;
+    js.src = url;
+    fjs.parentNode.insertBefore(js, fjs);
+    js.onload = function () {
+      resolve(window.google);
+    }
+    js.onerror = function (error) {
+      reject(error);
+    }
   });
 };
 
