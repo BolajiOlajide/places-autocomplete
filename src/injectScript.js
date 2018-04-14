@@ -1,6 +1,7 @@
 const injectScript = (url) => {
   return new Promise(function (resolve, reject) {
-    var js, fjs = document.getElementsByTagName(s)[0];
+    var id = 'google-map';
+    var js, fjs = document.getElementsByTagName('script')[0];
     if (document.getElementById(id)) {
       return;
     }

@@ -9,12 +9,9 @@ const { REACT_APP_API_KEY } = process.env;
 
 export const withScript = ComposedComponent => {
   class HOC extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        isLoading: true
-      };
-    }
+    state = {
+      isLoading: true
+    };
 
     componentDidMount() {
       // inject google places script

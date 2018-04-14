@@ -5,17 +5,11 @@ import RenderSuggestion from './suggestion';
 
 
 class SimpleForm extends Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-        address: '',
-        predictions: [],
-        validAddress: ''
-      };
-
-      this.onChange = this.onChange.bind(this);
-      this.onSelectAddress = this.onSelectAddress.bind(this);
-    }
+    state = {
+      address: '',
+      predictions: [],
+      validAddress: ''
+    };
 
     componentDidMount() {
       this.service = new window.google.maps.places.AutocompleteService();
@@ -39,7 +33,7 @@ class SimpleForm extends Component {
       }
     }
 
-    onSelectAddress(address) {
+    onSelectAddress = (address) => {
       this.setState({
         validAddress: address,
         predictions: [],

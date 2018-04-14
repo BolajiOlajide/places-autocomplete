@@ -75,4 +75,5 @@ button {
   width: 7rem;
   font-size: 1rem;
   height: 3rem;
+  cursor: pointer;
 }
