@@ -57,7 +57,7 @@ class SimpleForm extends Component {
       const { predictions } = this.state;
   
       return (
-        <form onSubmit={this.handleFormSubmit} style={{padding: '40px', position: 'relative'}}>
+        <form className="places-form" onSubmit={this.handleFormSubmit}>
           <input type="text" name="address" 
             value={this.state.address} onChange={this.onChange} />
           <section className="suggestion-container">

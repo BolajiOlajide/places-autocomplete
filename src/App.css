@@ -36,15 +36,26 @@ input {
   border: none;
 }
 
+.places-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
 .suggestion-container {
   position: absolute;
   left: 25%;
+  top: 5rem;
 }
 
 .suggestion {
   border: 1px solid #e8e8e8;
   width: auto;
   margin: 2px;
+  background: #FFF;
 }
 
 .suggestion:hover {
@@ -54,4 +65,14 @@ input {
 
 button {
   display: block;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(28, 184, 65);
+  padding: 5px;
+  outline: none;
+  margin: 4px;
+  width: 7rem;
+  font-size: 1rem;
+  height: 3rem;
 }
