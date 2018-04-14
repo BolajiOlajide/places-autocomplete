@@ -12,15 +12,12 @@ export const withScript = ComposedComponent => {
     }
 
     componentWillMount() {
-      console.log('constructors loading...')
       injectScript()
         .then(data => this.setState({ isLoading: false }));
-      console.log('done loading script')
     }
     
     render() {
       const { isLoading } = this.state;
-      console.log(window.google);
 
       return (
         <div>
