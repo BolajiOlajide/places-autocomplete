@@ -13,7 +13,8 @@ export const withScript = ComposedComponent => {
 
     componentWillMount() {
       console.log('constructors loading...')
-      injectScript();
+      injectScript()
+        .then(data => this.setState({ isLoading: false }));
       console.log('done loading script')
     }
     
@@ -23,7 +24,9 @@ export const withScript = ComposedComponent => {
 
       return (
         <div>
-          <ComposedComponent {...this.props} />
+          {
+            isLoading ? <span>Loading....</span> : <ComposedComponent {...this.props} />
+          }
         </div>
       )
     }

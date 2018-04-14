@@ -12,7 +12,7 @@ class SimpleForm extends Component {
 
     componentDidMount() {
       console.log('mount simple form', window.google);
-      // const service = new google.maps.places.AutocompleteService();
+      const service = new window.google.maps.places.AutocompleteService();
     }
 
     onChange = (event) => {
