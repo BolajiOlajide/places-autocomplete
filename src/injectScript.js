@@ -13,6 +13,8 @@ const injectScript = (url) => {
       resolve(window.google);
     }
     js.onerror = function (error) {
+      console.log('something went wrong');
+      console.log(error.message);
       reject(error);
     }
   });

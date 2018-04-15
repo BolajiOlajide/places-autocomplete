@@ -2,6 +2,7 @@ import React from 'react';
 import dotenv from 'dotenv';
 
 import injectScript from './injectScript';
+import Loader from './Loader';
 
 
 dotenv.config();
@@ -25,7 +26,7 @@ export const withScript = ComposedComponent => {
       return (
         <div>
           {
-            isLoading ? <span>Loading....</span> : <ComposedComponent {...this.props} />
+            isLoading ? <Loader /> : <ComposedComponent {...this.props} />
           }
         </div>
       )
